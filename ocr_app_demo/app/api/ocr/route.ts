@@ -1,9 +1,10 @@
-import { NextResponse } from 'next/server';
+export async function POST(request: Request) {
+  // giả lập xử lý OCR
+  await new Promise((r) => setTimeout(r, 1000));
 
-export async function GET() {
-  return NextResponse.json({
+  return Response.json({
     status: "OK",
     detected_value: "0.28",
-    reason: "Dữ liệu thật từ máy chủ"
+    file_name: "demo.pdf"
   });
 }
